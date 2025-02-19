@@ -9,10 +9,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Syncfusion.Gantt.WPF" Version="28.2.5" />
-    <PackageReference Include="Syncfusion.SfGrid.WPF" Version="28.2.5" />
-    <PackageReference Include="Syncfusion.SfSkinManager.WPF" Version="28.2.5" />
-    <PackageReference Include="Syncfusion.Themes.Material3Light.WPF" Version="28.2.5" />
+    <PackageReference Include="Syncfusion.Gantt.WPF" Version="*" />
+    <PackageReference Include="Syncfusion.SfGrid.WPF" Version="*" />
+    <PackageReference Include="Syncfusion.SfSkinManager.WPF" Version="*" />
+    <PackageReference Include="Syncfusion.Themes.Material3Light.WPF" Version="*" />
   </ItemGroup>
 
 </Project>
