@@ -1,0 +1,36 @@
+﻿<Window x:Class="WPFGanttSample.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:gantt="clr-namespace:Syncfusion.Windows.Controls.Gantt;assembly=Syncfusion.Gantt.Wpf"
+        xmlns:syncfusion="http://schemas.syncfusion.com/wpf"
+        xmlns:local="clr-namespace:WPFGanttSample"
+        mc:Ignorable="d"
+        Title="MainWindow"
+        Height="450"
+        Width="800">
+
+    <Window.DataContext>
+        <local:GanttViewModel />
+    </Window.DataContext>
+
+    <Window.Resources>
+        <Style TargetType="syncfusion:TreeGridHeaderCell">
+            <Setter Property="FontWeight"
+                    Value="Bold" />
+            <Setter Property="FontSize"
+                    Value="14" />
+            <Setter Property="Background"
+                    Value="LightPink" />
+            <Setter Property="Foreground"
+                    Value="DarkBlue" />
+        </Style>
+    </Window.Resources>
+
+    <Grid>
+        <gantt:GanttControl x:Name="gantt"
+                            ItemsSource="{Binding TaskCollection}">
+        </gantt:GanttControl>
+    </Grid>
+</Window>
