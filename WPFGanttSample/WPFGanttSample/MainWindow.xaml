@@ -16,8 +16,7 @@
     </Window.DataContext>
 
     <Window.Resources>
-        <Style TargetType="syncfusion:TreeGridHeaderCell"
-               x:Key="HeaderStyle">
+        <Style TargetType="syncfusion:TreeGridHeaderCell">
             <Setter Property="FontWeight"
                     Value="Bold" />
             <Setter Property="FontSize"
@@ -32,11 +31,6 @@
     <Grid>
         <gantt:GanttControl x:Name="gantt"
                             ItemsSource="{Binding TaskCollection}">
-
-            <gantt:GanttControl.Resources>
-                <Style BasedOn="{StaticResource HeaderStyle}"
-                       TargetType="syncfusion:TreeGridHeaderCell" />
-            </gantt:GanttControl.Resources>
         </gantt:GanttControl>
     </Grid>
 </Window>

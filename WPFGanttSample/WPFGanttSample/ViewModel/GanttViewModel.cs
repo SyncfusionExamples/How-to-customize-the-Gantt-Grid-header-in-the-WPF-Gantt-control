@@ -8,25 +8,39 @@
     /// </summary>
     public class GanttViewModel
     {
+        #region Fields
+
         /// <summary>
-        /// Field to store resource collection.
+        /// The resource collection.
         /// </summary>
         private ObservableCollection<Resource> _resourceCollection;
 
         /// <summary>
-        /// Field to store task collection.
+        /// The task collection.
         /// </summary>
         private ObservableCollection<TaskDetails> _taskCollection;
+
+        #endregion
+
+        #region Constructor
+
+        /// <summary>
+        /// Initialize a new instance of <see cref="GanttViewModel"/>
+        /// </summary>
         public GanttViewModel()
         {
             _resourceCollection = this.GetResources();
-            _taskCollection = this.GetData();
+            _taskCollection = this.GetTaskDetails();
         }
 
+        #endregion
+
+        #region Properties
+
         /// <summary>
-        /// Gets or sets the appointment item source.
+        /// Gets or sets the task collection.
         /// </summary>
-        /// <value>The appointment item source.</value>
+        /// <value>The task item source.</value>
         public ObservableCollection<TaskDetails> TaskCollection
         {
             get
@@ -55,14 +69,17 @@
             }
         }
 
+        #endregion
+
+        #region Private methods
+
         /// <summary>
-        /// Gets the resources.
+        /// Method to get the resources.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>The resource collection.</returns>
         private ObservableCollection<Resource> GetResources()
         {
             ObservableCollection<Resource> Resources = new ObservableCollection<Resource>();
-
             Resources.Add(new Resource { ID = 1, Name = "R & D" });
             Resources.Add(new Resource { ID = 2, Name = "Analyzers" });
             Resources.Add(new Resource { ID = 3, Name = "Product Definer" });
@@ -76,13 +93,12 @@
         }
 
         /// <summary>
-        /// Gets the data.
+        /// Method to get the task details.
         /// </summary>
-        /// <returns></returns>
-        public ObservableCollection<TaskDetails> GetData()
+        /// <returns>The task details.</returns>
+        public ObservableCollection<TaskDetails> GetTaskDetails()
         {
             ObservableCollection<TaskDetails> Activities = new ObservableCollection<TaskDetails>();
-
             Activities.Add(new TaskDetails { StartDate = new DateTime(2010, 6, 2), FinishDate = new DateTime(2010, 6, 18), TaskName = "Analysing Market Scope of the Product", TaskId = 1 });
 
             ObservableCollection<IGanttTask> MarketAnalysis = new ObservableCollection<IGanttTask>();
@@ -302,10 +318,11 @@
             PostReview[4].Resources.Add(this.ResourceCollection[7]);
 
             Activities[11].Child = PostReview;
-
             Activities.Add(new TaskDetails { StartDate = new DateTime(2010, 12, 10), FinishDate = new DateTime(2010, 12, 10), TaskName = "Product Released Successfully", TaskId = 70 });
 
             return Activities;
         }
+
+        #endregion
     }
 }

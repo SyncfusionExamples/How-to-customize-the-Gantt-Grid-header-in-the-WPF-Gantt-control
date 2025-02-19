@@ -1,10 +1,7 @@
 ﻿namespace WPFGanttSample
 {
-    using Syncfusion.SfSkinManager;
-    using Syncfusion.UI.Xaml.TreeGrid;
-    using Syncfusion.Windows.Controls.Gantt;
-    using System.Collections.ObjectModel;
     using System.Windows;
+    using Syncfusion.SfSkinManager;
 
     /// <summary>
     /// Interaction logic for MainWindow.xaml
